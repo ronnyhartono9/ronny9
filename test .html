@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport"content="width=device-width,initial-scale=1,maximum-scale=0.5,user-scalable=yes">
+<body>
+<Center>
+    <table border=1 style="width: 70%;" >
+        <tr align="center">
+            <td>
+                <div id="element">My Header</div>
+
+                <p>Click the button to see the width change.</p>
+
+                <button id="myBtn">Try it</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+                <div style="height: 40vw;">
+                ddd
+                </div>
+
+            </td>
+        </tr>
+    </table>
+    <a href="http://jsfiddle.net/cQqUF/" target a>link table 100% height</a>
+</Center>
+
+
+
+
+    <script>
+
+    document.getElementById("myBtn").addEventListener("click", callbackFunc);
+
+    var element = document.getElementById("element")
+    element.style.width = "0px";
+    element.style.overflow = "hidden";element.style.color = "white";
+
+    function callbackFunc() {
+    
+    element.style.backgroundColor = "blue";
+    element.style.width = "100px";element.style.color = "red";
+    element.style.transition = "all 2s";
+    }
+    </script>
+
+</body>
+</html>

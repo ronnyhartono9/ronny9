@@ -1,0 +1,168 @@
+.wolpeper {   
+  background-image: url("back.jpg"); 
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+br {
+  content: "";
+  margin: 0.5em;
+  display: block;
+  font-size: 24%;
+}
+.section{  background:pink;
+  width: 100%;
+ /* overflow: scroll; height: 100%;*/
+  border:1px solid black; 
+   box-shadow: 8px 10px 8px #888888;
+}
+
+.section2{ height: 80%; background:white;
+  width: 80%;
+  border:1px solid black; 
+}
+.vl {
+  position: relative;
+  border-left: 6px solid green;
+  height: 100%;
+  top:-40%;
+}
+.m{
+  
+  opacity: 0;   
+  border-radius: 2px;
+  border: solid red 0px;
+  font-size: 2vw;
+  word-wrap: break-word;
+}
+.lab{
+  position: relative;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: "203px";
+  color: #f35423;
+  opacity:0; 
+  left:800px;
+}
+.a2{
+  font-size: 20px;font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(221, 44, 0);
+}
+.a3{
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
+  color: black;font-weight: bold;
+}
+.abo{
+  font-size: 25px;
+  font-family: 'Times New Roman', Times, serif;
+  color: black;font-weight: bold;
+}
+.a4{position: relative;left:10px;
+  font-size: 14px;
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+}
+  .section table{
+    height: 100%; background:white;
+    width: 100%;
+  }
+
+  #info {
+    border-radius: 14px;
+    height:40px;
+    overflow:hidden;
+    position: fixed;
+    cursor:pointer;
+    
+    bottom:0%;
+    width:20%;left: 80%;
+    color: brown;
+    background-color: khaki;
+    opacity: 1;
+}
+#k {
+  border-radius: 14px;
+  height:40px;
+  
+  overflow:hidden;
+  position: fixed;
+  cursor:pointer;
+  bottom:10%;
+  width:20%;left: 70%;
+  height:40%;
+  color: brown;
+  background-color: khaki;
+  opacity: 1;
+}
+div.bottom { text-align: center;
+  vertical-align: bottom;
+  position: relative;
+  text-align: center; 
+  height: 0%;
+  width: 100%;
+  bottom: 0%;
+  border: 0px solid #8c07c0;
+} 
+ 
+.lbl{
+  opacity: 0.5;
+  position: relative;
+  left:10px;
+  transition: all 2s ;
+  font-size: 10px;
+  cursor: pointer;
+}
+ 
+
+.dv {
+    border-radius: 4px;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: all 2s ;
+    cursor: pointer;color:yellow;
+}
+.fadeout {
+ opacity: 0;
+}
+
+
+
+.button {
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px; 
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .button ooo { /*untuk tulisan */
+    cursor: pointer;
+    display: inline-block;
+    position: relative;    
+    transition: 0.5s;
+  }
+  
+  .button ooo:after {  /*untuk setelah tulisan di dalam*/
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover ooo {
+    padding-right: 25px; 
+  }
+  
+  .button:hover ooo:after {
+    opacity: 1;
+    right: 0;
+  }
