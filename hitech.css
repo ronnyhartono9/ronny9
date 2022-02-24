@@ -42,12 +42,12 @@ br {
   left:800px;
 }
 .a2{
-  font-size: 1.5vw;font-weight: bold;
+  font-size: 20px;font-weight: bold;
   font-family: 'Times New Roman', Times, serif;
   color: rgb(221, 44, 0);
 }
 .a3{
-  font-size: 1.6vw;
+  font-size: 16px;
   font-family: 'Times New Roman', Times, serif;
   color: black;font-weight: bold;
 }
@@ -57,7 +57,7 @@ br {
   color: black;font-weight: bold;
 }
 .a4{position: relative;left:10px;
-  font-size: 1.4vw;
+  font-size: 14px;
   font-family: 'Times New Roman', Times, serif;
   color: black;
 }
