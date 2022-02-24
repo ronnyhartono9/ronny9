@@ -1,15 +1,3 @@
-  #atas {   
-    height:40px;
-    text-align: center;
-    overflow:hidden;
-    position: fixed;
-    cursor:pointer;    
-    top: 0%;
-    width: 100%;
-    color: brown;
-    background-color: white;
-    opacity: 1;z-index: 200;
-}
 .wolpeper {   
   background-image: url("back.jpg"); 
   background-repeat: no-repeat;
@@ -23,7 +11,6 @@ br {
 }
 .section{  background:pink;
   width: 100%;
- /* overflow: scroll; height: 100%;*/
   border:1px solid black; 
    box-shadow: 8px 10px 8px #888888;
 }
@@ -55,37 +42,48 @@ br {
   left:800px;
 }
 .a2{
-  font-size: 3vw ;font-weight: bold;
+  font-size: 1.5vw;font-weight: bold;
   font-family: 'Times New Roman', Times, serif;
   color: rgb(221, 44, 0);
 }
 .a3{
-  font-size: 3vw ;
+  font-size: 1.6vw;
   font-family: 'Times New Roman', Times, serif;
   color: black;font-weight: bold;
-}
-.a4{position: relative;left:10px;
-  font-size: 2.8vw ;
-  font-family: 'Times New Roman', Times, serif;
-  color: black;
 }
 .abo{
   font-size: 25px;
   font-family: 'Times New Roman', Times, serif;
   color: black;font-weight: bold;
 }
+.a4{position: relative;left:10px;
+  font-size: 1.4vw;
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+}
   .section table{
     height: 100%; background:white;
     width: 100%;
   }
-
+  #atas {
+    left:10%;
+    height:30px;
+    text-align: center;
+    overflow:hidden;
+    position: fixed;
+    cursor:pointer;    
+    top: 0%;
+    width: 80%;
+    color: brown;
+    background-color: white;
+    opacity: 1;z-index: 200;
+}
   #info {
     border-radius: 14px;
     height:40px;
     overflow:hidden;
     position: fixed;
-    cursor:pointer;
-    
+    cursor:pointer;    
     bottom:0%;
     width:20%;left: 80%;
     color: brown;
