@@ -36,11 +36,21 @@ function tran3(){
     }
     element.style.transition = "all 1.5s";
 }
+var nomer=0;
+var myInterval = null ;
+function dungu() {
+    nomer = 0;
+    clearInterval(myInterval);
+    myInterval = setInterval(smiley, 2000);
+}
  
-function smiley(){
-    var element2 = document.getElementById("ndelik");
-    if(element2.style.top == "40%"){element2.style.top= "100%";}else{ element2.style.top= "40%";}
-    element2.style.transition = "all ease 2s";
+function smiley(){nomer++;
+    if(nomer<=2){
+        var element2 = document.getElementById("ndelik");
+        if(element2.style.top == "40%"){element2.style.top= "100%";}else{ element2.style.top= "40%";}
+        element2.style.transition = "all ease 4s";
+        //       
+    }  console.log(nomer); 
 }
 function movie(){
     var element3 = document.getElementById("ndas");var jng = document.getElementById("jng");
