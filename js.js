@@ -49,8 +49,8 @@ function movie(){
     var l2 = document.getElementById("l2");var m2 = document.getElementById("m2");
     var l3 = document.getElementById("l3");var m3 = document.getElementById("m3");
 
-    var pr = document.getElementById("pr");
-    var pr2 = document.getElementById("pr2");
+    var pr = document.getElementById("pr");var hd = document.getElementById("hd");
+    var pr2 = document.getElementById("pr2");var hd2 = document.getElementById("hd2");
 
     element3.style.top="8px";element3.style.opacity=1;
     element3.style.transition = "all 2s";
@@ -83,6 +83,14 @@ function movie(){
     pr2.style.opacity=1;
     pr2.style.transition = "all ease 4s";
     pr2.style.transitionDelay = "5s";
+
+    hd.style.opacity=1;
+    hd.style.transition = "all ease 4s";
+    hd.style.transitionDelay = "5s";
+
+    hd2.style.opacity=1;
+    hd2.style.transition = "all ease 4s";
+    hd2.style.transitionDelay = "5s";
     
     rai.style.opacity=1;
     rai.style.transition = "all ease 4s";
