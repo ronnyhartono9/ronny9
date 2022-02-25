@@ -3,6 +3,11 @@
   background-repeat: no-repeat;
   background-size: cover; 
 }
+.hrku {
+  background: linear-gradient(to right,white, red, white);
+  border:0px;
+  height: 1px;
+}
 .blek {   
   background-color:#524949;
 }
