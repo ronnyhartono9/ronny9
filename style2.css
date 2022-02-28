@@ -1,0 +1,100 @@
+.bg {
+  position: relative;
+  background-color: transparent;
+  width: 80%;
+  height: 30px;
+ 
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.html {
+  background: -webkit-linear-gradient(
+    135deg,
+    #8b990d 25%, #387003 25%,
+		#387003 50%, #8b990d 50%,
+		#8b990d 75%, #387003 75%
+  ); 
+  
+  width: 80%;
+  height: 30px;font-weight: bold;
+  line-height: 30px;
+  color: #fff;
+  background-size: 50px 50px;  
+  -webkit-animation: bar-animation 3s linear infinite;
+}
+
+.html2 { 
+  background: -webkit-linear-gradient(
+    135deg,
+    #da4602 25%, #e75613 25%,
+		#e75613 50%, #da4602 50%,
+		#da4602 75%, #e75613 75%
+  ); 
+  width: 80%;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;font-weight: bold;
+  background-size: 50px 50px;  
+  -webkit-animation: bar-animation 3s linear infinite;
+}
+
+.html3 {
+  background: -webkit-linear-gradient(
+    135deg,
+    #0797da 25%, #145de4 25%,
+		#145de4 50%, #0797da 50%,
+		#0797da 75%, #145de4 75%
+  ); 
+  width: 80%;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;font-weight: bold;
+  background-size: 50px 50px;  
+  -webkit-animation: bar-animation 3s linear infinite;
+}
+
+.html4 {
+  background: -webkit-linear-gradient(
+    135deg,
+    #0797da 25%, #145de4 25%,
+		#145de4 50%, #0797da 50%,
+		#0797da 75%, #145de4 75%
+  ); 
+  width: 80%;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;font-weight: bold;
+  background-size: 50px 50px;  
+  -webkit-animation: bar-animation 3s linear infinite;
+}
+
+.html5 {
+  background: -webkit-linear-gradient(
+    135deg,
+    #ebba1c 25%, #dba903 25%,
+		#dba903 50%, #ebba1c 50%,
+		#ebba1c 75%, #dba903 75%
+  ); 
+  width: 80%;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;font-weight: bold;
+  background-size: 50px 50px;  
+  -webkit-animation: bar-animation 3s linear infinite;
+}
+
+@-webkit-keyframes bar-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
