@@ -3,28 +3,40 @@
 <meta name="viewport"content="width=device-width,initial-scale=0.6">
     <head> 
         <script type="text/javascript">
-            class playerr{ 
+            class players{ 
+                    constructor(name,score) {
+                        this.name = name;
+                        this.score = score;
+                    } 
             } 
             var giliran = 0; // ganjil lingkaran,genap x
             var namapemenang = "";//oop disini
             function change(x,y){
                 giliran++;
-                if(giliran % 2 ==0){
+                if(giliran % 2 ==0){document.getElementById(x+","+y).style.color = "black";
                     document.getElementById(x+","+y).value = "O";
                     
-                }else{
+                }else{document.getElementById(x+","+y).style.color = "black";
                     document.getElementById(x+","+y).value = "X";
                 }
                 document.getElementById(x+","+y).disabled  = true;
                 cek();
             }
 
-             function make(){giliran = 0;
+           
+                var b_avai=0;
+                var k_avai = 0;
+                const player1 = new players("player1",0);
+                const player2 = new players("player2",0);
+
+             function make(){giliran = 0; 
                 document.getElementById("p1").innerHTML = "0";
                 document.getElementById("p2").innerHTML = "0";
+                document.getElementById("q1").innerHTML = "0";
+                document.getElementById("q2").innerHTML = "0";
+
                  var b= document.getElementById("jum").value;
-                 var table = document.getElementById("tab");
-           
+                 var table = document.getElementById("tab"); 
                 var c = table.rows.length;
                 for(i=0;i<=c-1;i++){ 
                     try {
@@ -38,17 +50,22 @@
                     var row = table.insertRow(i);
                     for(j=0;j<=b-1;j++){
                         var cell1 = row.insertCell(j);
-                            cell1.innerHTML = "<input onclick=change("+i+","+j+") id="+ i+","+j+" style=' border-radius:10px; background:gold; width:100%;height:50px'type='button'>";
+                            cell1.innerHTML = "<input onclick=change("+i+","+j+") id="+ i+","+j+" style=' border-radius:10px; background:silver; width:100%;height:50px'type='button' value='' >";
                     }
-                }
+                }    var c = table.rows.length;
+                     document.getElementById("b_avai").innerHTML = c;
+                     document.getElementById("k_avai").innerHTML = c;
                 
              }
 
              function cek(){
-                //baris
+                //baris 
+                    cnt=0;
                     var table = document.getElementById("tab");
                     var c = table.rows.length;
+                   
                     var first ="";
+                    var kenek=0;
                     for(i=0;i<=c-1;i++){
                         first = document.getElementById(i+","+0).value;                    
                         var br = true;
@@ -56,12 +73,11 @@
                                 if(document.getElementById(i+","+j).value != first || document.getElementById(i+","+j).value== "")
                                 { br= false;}
                             }
-                            if(br){                            
+                            if(br){
                                     for(x=0;x<=c-1;x++){
-                                        if( document.getElementById(i+","+x).value == "X"){
-                                         
-
-                                            if( document.getElementById(i+","+x).style.backgroundColor != "blue"){
+                                        
+                                        if( document.getElementById(i+","+x).value == "X"){ 
+                                            if( document.getElementById(i+","+x).style.backgroundColor != "blue"){ 
                                                 document.getElementById(i+","+x).style.backgroundColor = "blue";
                                                 document.getElementById(i+","+x).style.color = "white";
                                                 document.getElementById("p1").innerHTML = 
@@ -70,10 +86,15 @@
                                                 document.getElementById("q1").innerHTML = Math.ceil(
                                                 parseInt(document.getElementById("p1").innerHTML) / c);
 
+                                               
+
+                                                if(cnt ==0){   document.getElementById("b_avai").innerHTML =   parseInt(document.getElementById("b_avai").innerHTML) - 1; 
+                                                    
+                                                 
+                                                }
+                                                cnt++; 
                                              }
                                         }else{
-                                          
-
                                             if( document.getElementById(i+","+x).style.backgroundColor != "red"){
                                                 document.getElementById(i+","+x).style.backgroundColor = "red";
                                                 document.getElementById(i+","+x).style.color = "white";
@@ -82,17 +103,24 @@
 
                                                 document.getElementById("q2").innerHTML = Math.ceil(
                                                 parseInt(document.getElementById("p2").innerHTML) / c);
+
+                                                
+                                                if(cnt ==0){    document.getElementById("b_avai").innerHTML =   parseInt(document.getElementById("b_avai").innerHTML) - 1;  
+                                                   
+                                                }
+                                                cnt++;
                                              }                                                 
                                         }
                                         
                                     }
                             }
-                    }
+                    } 
 
                 //kolom
                     var table = document.getElementById("tab");
                     var c = table.rows.length;
-                    var first ="";
+                    var first ="";var k_avai =c;
+                    cnt = 0;
                     for(i=0;i<=c-1;i++){
                         first = document.getElementById(0+","+i).value;                    
                         var br = true;
@@ -112,6 +140,13 @@
 
                                                 document.getElementById("q1").innerHTML = Math.ceil(
                                                 parseInt(document.getElementById("p1").innerHTML) / c);
+
+                                                
+
+                                                if(cnt ==0){   document.getElementById("k_avai").innerHTML =   parseInt(document.getElementById("k_avai").innerHTML) - 1; 
+                                              
+                                                }
+                                                cnt++;
                                                 
                                              } 
                                         }else{
@@ -122,7 +157,11 @@
                                                 (parseInt(document.getElementById("p2").innerHTML) + 1) ;
 
                                                 document.getElementById("q2").innerHTML = Math.ceil(
-                                                parseInt(document.getElementById("p2").innerHTML)/ c);
+                                                parseInt(document.getElementById("p2").innerHTML)/ c); 
+                                                if(cnt ==0){  document.getElementById("k_avai").innerHTML =   parseInt(document.getElementById("k_avai").innerHTML) - 1;
+                                                
+                                                 }
+                                                cnt++;
                                             }
                                         }
                                          
@@ -150,7 +189,7 @@
                             for(j=0;j<=c-1;j++){//kolom
                                 if( i==j){
                                     if( document.getElementById(i+","+j).value == "X"   ){
-                                        namapemenang = "player 1"; //oop disini
+                                        namapemenang = player1.name; //      "player 1";
                                         if( document.getElementById(i+","+j).style.backgroundColor != "blue"){
                                             document.getElementById(i+","+j).style.backgroundColor = "blue";
                                             document.getElementById(i+","+j).style.color = "white";
@@ -159,7 +198,7 @@
                                         } 
                                     }else{
                                         if( document.getElementById(i+","+j).style.backgroundColor != "red"){
-                                            namapemenang = "player 2";//oop disini
+                                            namapemenang = player2.name;  //    "player 2";
                                             document.getElementById(i+","+j).style.backgroundColor = "red";
                                             document.getElementById(i+","+j).style.color = "white";
                                             document.getElementById("p2").innerHTML = parseInt(document.getElementById("p2").innerHTML) + 1;
@@ -190,14 +229,14 @@
                         for(i=0;i<=c-1;i++){   //baris
                             for(j=0;j<=c-1;j++){    //kolom
                                 if( i+j == c-1 ){
-                                    if( document.getElementById(i+","+j).value == "X"   ){namapemenang = "player 1";//oop disini
+                                    if( document.getElementById(i+","+j).value == "X"   ){namapemenang = player1.name;//
                                         if( document.getElementById(i+","+j).style.backgroundColor != "blue"){
                                             document.getElementById(i+","+j).style.backgroundColor = "blue";
                                             document.getElementById(i+","+j).style.color = "white";
                                             document.getElementById("p1").innerHTML = parseInt(document.getElementById("p1").innerHTML) + 1;
                                         } 
                                     }else{
-                                        if( document.getElementById(i+","+j).style.backgroundColor != "red"){namapemenang = "player 2";//oop disini
+                                        if( document.getElementById(i+","+j).style.backgroundColor != "red"){namapemenang = player2.name;//   
                                             document.getElementById(i+","+j).style.backgroundColor = "red";
                                             document.getElementById(i+","+j).style.color = "white";
                                             document.getElementById("p2").innerHTML =( parseInt(document.getElementById("p2").innerHTML) + 1);
@@ -210,23 +249,80 @@
                         alert('permainan berakhir dan dimenangkan oleh '+namapemenang);//oop disini
                         make();
                     }
+                        cek_stop();
+             }
+             
+             function cek_stop(){ 
+                var table = document.getElementById("tab");
+                var d = table.rows.length;
+                //cek baris yang belum penuh
+                for(a=0;a<=d-1;a++){
+                    penuhb = true;
+                    for(a1=0;a1<=d-1;a1++){
+                        if( document.getElementById(a+","+a1).style.backgroundColor != "blue"   && document.getElementById(a+","+a1).style.backgroundColor != "red"   ){
+                            penuhb = false;
+                        }
+                    }
+                    if(!penuhb){console.clear;
+                          console.log("baris "+a+ " belum penuh");        //alert("baris "+a+ " belum penuh");
+                        //cek apakah bisa seragam 
+                    }
+                }
+                 
 
-             }
-             //yang diagonal pertama kali pasti menang 
-             function cek_stop(){
-                 //minimal baris atau kolom harus tinggal 2 
-                 // cek baris yang masih kosong atau bisa diisi seragam
-                 // cek kolom yang masih kosong atau bisa diisi seragam
-             }
+                var table = document.getElementById("tab");
+                var d = table.rows.length;
+                //cek kolom yang belum penuh
+                for(a=0;a<=d-1;a++){
+                    penuhk = true;
+                    for(a1=0;a1<=d-1;a1++){
+                        if( document.getElementById(a1+","+a).style.backgroundColor != "blue"   && document.getElementById(a1+","+a).style.backgroundColor != "red"   ){
+                            penuhk = false;
+                        }
+                    }
+                    if(!penuhk){
+                        console.clear;
+                        console.log("kolom "+a+ " belum penuh");   //alert("kolom "+a+ " belum penuh");
+                        //cek apakah bisa seragam 
+                    }
+                }
+                
+                //cek terisi semua
+                var table = document.getElementById("tab");
+                var d = table.rows.length; 
+                penuh = true;
+                for(a=0;a<=d-1;a++){ 
+                    for(a1=0;a1<=d-1;a1++){ 
+                        if( document.getElementById(a+","+a1).value == "" ){
+                            penuh = false;
+                        }
+                    } 
+                }
+                if(penuh){
+                    player1.score = document.getElementById("q1").innerHTML;
+                    player2.score = document.getElementById("q2").innerHTML;
+
+                    if(player1.score > player2.score){
+                        alert('permainan berakhir player 1 menang dan start lagi !!! score player 1 ='+ player1.score   );      
+                    }else if(player1.score < player2.score) {
+                        alert('permainan berakhir player 2 menang dan start lagi !!! score player 2 ='+ player2.score   );  
+                    }else{
+                        alert('permainan berakhir seimbang dan start lagi !!! dengan score ='+ player1.score   );  
+                    } 
+                         make();
+                       
+                    } 
+             } 
+             
         </script>
-    </head>
-
+    </head> 
     <body>  
         <Center>
             <table  style="width: 100%;height: 100%;">
                 <tr style="height: 10%; text-align: center;">
                     <td colspan="3"style="color:blue;background-color: rgb(217, 209, 224);">
-                        Masukan jumlah <input type="text"id="jum"> <input type="button"value="masuk"onclick="make()"> 
+                        Masukan jumlah <input type="text"id="jum"> <input type="button"value="Start"onclick="make()"> <br>
+                        <input type="button"value="test"onclick="cek_stop()">
                     </td>
                 </tr>
                 <tr style="height: 10%; text-align: center;">
@@ -237,7 +333,13 @@
                 <Tr>
                      <td colspan=3 style="width: 100%; vertical-align: top;"align="center" ><table   style=" width: 100%;" id="tab"></table></td>
                 </Tr>
+                <tr style="visibility: hidden;">
+                    <td>
+                        jumlah baris <a id="b_avai"> </a>
+                        jumlah kolom <a id="k_avai"> </a>
+                    </td>
+                </tr>
             </table>
-    </Center>
+    </Center> 
     </body>
 </html>
